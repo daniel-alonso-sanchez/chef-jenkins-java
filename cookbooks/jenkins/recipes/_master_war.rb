@@ -56,14 +56,17 @@ end
 include_recipe 'runit::default'
 
 # Download the remote WAR file
+save_http_proxy = Chef::Config[:http_proxy]
+Chef::Config[:http_proxy] = "http://192.168.10.145:8080"
+
 remote_file File.join(node['jenkins']['master']['home'], 'jenkins.war') do
   source   node['jenkins']['master']['source']
   checksum node['jenkins']['master']['checksum'] if node['jenkins']['master']['checksum']
   owner    node['jenkins']['master']['user']
   group    node['jenkins']['master']['group']
   notifies :restart, 'runit_service[jenkins]'
+Chef::Config[:http_proxy] = save_http_proxy
 end
-
 Chef::Log.warn('Here we go with the runit service')
 
 # Create runit service

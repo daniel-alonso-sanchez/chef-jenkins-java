@@ -12,6 +12,7 @@
     "apt": "~> 2.0",
     "runit": "~> 1.5",
     "yum": "~> 3.0"
+	"java": "~> 1.36.0"
   },
   "recommendations": {
 
