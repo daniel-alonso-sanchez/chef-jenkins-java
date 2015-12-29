@@ -21,7 +21,7 @@
 
 # install gems required for updating settings
 data = data_bag_item( 'maven', 'config' )
-log ${data} do
+log data do
   level :info
 end
   template "/usr/local/maven/conf/settings.xml" do
