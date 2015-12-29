@@ -91,14 +91,7 @@ under the License.
     <!-- proxy
      | Specification for one proxy, to be used in connecting to the network.
      -->
-    <proxy>
-      <id>corp-prox</id>
-      <active>true</active>
-      <protocol>http</protocol>   
-      <host><%= @proxy_host %></host>
-      <port><%= @proxy_port %></port>
-      <nonProxyHosts><%= @proxy_exclude %></nonProxyHosts>
-    </proxy>
+   
     
   </proxies>
 
