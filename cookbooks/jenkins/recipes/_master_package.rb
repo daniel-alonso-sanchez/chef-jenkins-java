@@ -116,6 +116,11 @@ end
 jenkins_plugin 'sonar' do
   source 'http://updates.jenkins-ci.org/latest/sonar.hpi'
 end
+jenkins_user 'jAdmin' do
+  full_name    'jenkins Admin'
+  email        'jenkins@etg.com'
+  password     '..jenkins'
+end
 service 'jenkins' do
   supports status: true, restart: true, reload: true
   action  [:enable, :start]
