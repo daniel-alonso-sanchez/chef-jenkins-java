@@ -116,11 +116,6 @@ end
 jenkins_plugin 'sonar' do
   source 'http://updates.jenkins-ci.org/latest/sonar.hpi'
 end
-jenkins_user 'jAdmin' do
-  full_name    'jenkins Admin'
-  email        'jenkins@etg.com'
-  password     '..jenkins'
-end
 jenkins_script 'activate global security' do
   command <<-EOH.gsub(/^ {4}/, '')
       import jenkins.model.*
