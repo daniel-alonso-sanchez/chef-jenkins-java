@@ -57,5 +57,8 @@ else
 		mode   '0755'
 	  end
   end
+  magic_shell_environment 'M2_HOME' do
+	value node['maven']['m2_home']
+  end
 end
 
