@@ -1,0 +1,52 @@
+{
+  "create": {
+    "actors": [
+      "masterchef",
+      "pivotal"
+    ],
+    "groups": [
+      "admins",
+      "users"
+    ]
+  },
+  "read": {
+    "actors": [
+      "masterchef",
+      "pivotal"
+    ],
+    "groups": [
+      "admins",
+      "clients",
+      "users"
+    ]
+  },
+  "update": {
+    "actors": [
+      "masterchef",
+      "pivotal"
+    ],
+    "groups": [
+      "admins",
+      "users"
+    ]
+  },
+  "delete": {
+    "actors": [
+      "masterchef",
+      "pivotal"
+    ],
+    "groups": [
+      "admins",
+      "users"
+    ]
+  },
+  "grant": {
+    "actors": [
+      "masterchef",
+      "pivotal"
+    ],
+    "groups": [
+      "admins"
+    ]
+  }
+}

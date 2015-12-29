@@ -1,0 +1,5 @@
+{
+  "name": "etg-validator",
+  "validator": true,
+  "public_key": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2QbAQjMwR03z0gpd2bRy\n7vwv/kddXE9wzvnzFULXN6bNLWYhmRFcbyLfIl3t614X0SOwez0U9HhNkqhj4co3\ndiWfWvBFPSMiEA/VHg6kRLls0Abo5j8ZRo0AIR0vOdnnujHHiaTnzCLXVejNilAv\nCrcyiALmCvkJhXYMPnAUs8sGLLz8Zwfab+hC/aH++b0xk18WHweGK/XeDnYFWiud\nR2DNaeJu54txQpSWMiFoOo4SUb5re+zHATOmSlMNdAwfxRnQocVv3fyND+iwE/Qh\nnQf+OdEU846uzEv2LLOUcoeXRJtlcyrgPGz6y/oPpFL+B8Vo//9evaIDswDlZsZs\nbwIDAQAB\n-----END PUBLIC KEY-----\n\n"
+}

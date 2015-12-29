@@ -1,0 +1,53 @@
+{
+  "create": {
+    "actors": [
+      "jenkins.ubuntu.local",
+      "pivotal"
+    ],
+    "groups": [
+      "admins",
+      "clients",
+      "users"
+    ]
+  },
+  "read": {
+    "actors": [
+      "jenkins.ubuntu.local",
+      "pivotal"
+    ],
+    "groups": [
+      "admins",
+      "clients",
+      "users"
+    ]
+  },
+  "update": {
+    "actors": [
+      "jenkins.ubuntu.local",
+      "pivotal"
+    ],
+    "groups": [
+      "admins",
+      "users"
+    ]
+  },
+  "delete": {
+    "actors": [
+      "jenkins.ubuntu.local",
+      "pivotal"
+    ],
+    "groups": [
+      "admins",
+      "users"
+    ]
+  },
+  "grant": {
+    "actors": [
+      "jenkins.ubuntu.local",
+      "pivotal"
+    ],
+    "groups": [
+      "admins"
+    ]
+  }
+}

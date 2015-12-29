@@ -1,0 +1,7 @@
+{
+  "name": "clients",
+  "clients": [
+    "etg-validator",
+    "jenkins.ubuntu.local"
+  ]
+}
