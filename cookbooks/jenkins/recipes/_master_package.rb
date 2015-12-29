@@ -70,7 +70,10 @@ when 'rhel'
     notifies :restart, 'service[jenkins]', :immediately
   end
 end
-
+# Install a plugin from a given hpi (or jpi)
+jenkins_plugin 'chucknorris' do
+  source 'https://updates.jenkins-ci.org/download/plugins/chucknorris/0.9.1/chucknorris.hpi'
+end
 service 'jenkins' do
   supports status: true, restart: true, reload: true
   action  [:enable, :start]
