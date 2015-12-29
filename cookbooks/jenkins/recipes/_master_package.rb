@@ -70,6 +70,11 @@ when 'rhel'
     notifies :restart, 'service[jenkins]', :immediately
   end
 end
+
+service 'jenkins' do
+  supports status: true, restart: true, reload: true
+  action  [:enable, :restart]
+end
 # Install a plugin from a given hpi (or jpi)
 jenkins_plugin 'chucknorris' do
   source 'https://updates.jenkins-ci.org/latest/chucknorris.hpi'
@@ -134,8 +139,4 @@ jenkins_script 'activate global security' do
       
       instance.save()
   EOH
-end
-service 'jenkins' do
-  supports status: true, restart: true, reload: true
-  action  [:enable, :restart]
 end
