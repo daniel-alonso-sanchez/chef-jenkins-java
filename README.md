@@ -4,23 +4,23 @@ Chef repo with jenkins and oracle java recipes
 
 At this moment, it adds basic security with the user 'admin' and installs the following list of plugins
 
-git
-git-client
-scm-api
-rebuild
-jobConfigHistory
-plugin-usage-plugin
-credentials
-groovy
-job-dsl
-bitbucket
-plain-credentials
-config-file-provider
-token-macro
-parameterized-trigger
-clone-workspace-scm
-chucknorris 
-sonar
+ * git
+ * git-client
+ * scm-api
+ * rebuild
+ * jobConfigHistory
+ * plugin-usage-plugin
+ * credentials
+ * groovy
+ * job-dsl
+ * bitbucket
+ * plain-credentials
+ * config-file-provider
+ * token-macro
+ * parameterized-trigger
+ * clone-workspace-scm
+ * chucknorris 
+ * sonar
 
 In order to run the installation, this command should be used
 
