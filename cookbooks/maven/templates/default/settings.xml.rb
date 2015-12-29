@@ -8,9 +8,7 @@
       <id>corp-prox</id>
       <active>true</active>
       <protocol>http</protocol>   
-      <host><%= @proxy_host %></host>
-      <port><%= @proxy_port %></port>
-      <nonProxyHosts><%= @proxy_exclude %></nonProxyHosts>
+    
     </proxy>    
   </proxies>
 </settings>
