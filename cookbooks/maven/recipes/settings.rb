@@ -20,12 +20,11 @@
 #
 
 # install gems required for updating settings
-proxies = data_bag( 'proxies', )
-  proxies.each do |proxy|  
-      daproxy = data_bag_item("proxies", proxy)
-	  template "/usr/local/maven/conf/settings.xml" do
-		variables( :proxy_host => daproxy['proxy_host'],:proxy_port => daproxy['proxy_port'],:proxy_exclude => daproxy['proxy_exclude'] )
-		source 'settings.xml.erb'
-		mode   '0755'
-	  end
-  end
+
+chef_gem 'nori' do
+  action :install
+end
+
+chef_gem 'gyoku' do
+  action :install
+end
