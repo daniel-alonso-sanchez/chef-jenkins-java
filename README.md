@@ -1,6 +1,6 @@
 # chef-jenkins-java
 
-Chef repo with jenkins and oracle java recipes
+Chef repo with recipes for managing installations of jenkins with oracle java 8
 
 At this moment, it adds basic security with the user 'admin' and installs the following list of plugins
 
