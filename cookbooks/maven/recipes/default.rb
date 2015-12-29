@@ -48,7 +48,7 @@ else
     mode   '0755'
   end
   data = data_bag_item( 'maven', 'config' )
-  template "/usr/local/maven/conf" do
+  template "/usr/local/maven/conf/settings.xml" do
     variables( :proxy_host => data['proxy.host'],:proxy_port => data['proxy.port'],:proxy_exclude => data['proxy.exclude'] )
     source 'settings.xml.erb'
     mode   '0755'
