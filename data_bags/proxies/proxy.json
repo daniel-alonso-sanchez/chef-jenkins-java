@@ -1,5 +1,5 @@
 {
-  "id": "config",
+  "id": "proxy",
   "proxy_host": "192.168.10.145",
   "proxy_port":"8080",
   "proxy_exclude": "chef.ubuntu.local,localhost"

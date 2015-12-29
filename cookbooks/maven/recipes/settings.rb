@@ -20,12 +20,12 @@
 #
 
 # install gems required for updating settings
-data = data_bag_item( 'maven', 'config' )
-log data['proxy_host'] do
-  level :info
-end
-  template "/usr/local/maven/conf/settings.xml" do
-    variables( :proxy_host => data['proxy_host'],:proxy_port => data['proxy_port'],:proxy_exclude => data['proxy_exclude'] )
-    source 'settings.xml.erb'
-    mode   '0755'
+proxies = data_bag( 'proxies', 'proxy' )
+  proxies.each do |proxy|  
+      proxy = data_bag_item("wp-sites", site)
+	  template "/usr/local/maven/conf/settings.xml" do
+		variables( :proxy_host => proxy['proxy_host'],:proxy_port => proxy['proxy_port'],:proxy_exclude => proxy['proxy_exclude'] )
+		source 'settings.xml.erb'
+		mode   '0755'
+	  end
   end
