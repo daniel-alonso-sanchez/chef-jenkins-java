@@ -21,16 +21,9 @@
 
 # install gems required for updating settings
 data = data_bag_item( 'maven', 'config' )
-  Chef::Log.debug(data)
+  Chef::Log.info(data)
   template "/usr/local/maven/conf/settings.xml" do
-    variables( :proxy_host => data['proxy.host'],:proxy_port => data['proxy.port'],:proxy_exclude => data['proxy.exclude'] )
+    variables( :proxy_host => data['proxy_host'],:proxy_port => data['proxy_port'],:proxy_exclude => data['proxy_exclude'] )
     source 'settings.xml.erb'
     mode   '0755'
   end
-chef_gem 'nori' do
-  action :install
-end
-
-chef_gem 'gyoku' do
-  action :install
-end
