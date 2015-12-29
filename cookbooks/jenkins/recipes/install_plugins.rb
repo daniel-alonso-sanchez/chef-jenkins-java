@@ -44,4 +44,7 @@ end
 jenkins_plugin 'sonar' do
   source 'http://updates.jenkins-ci.org/latest/sonar.hpi'
 end
-
+service 'jenkins' do
+  supports status: true, restart: true, reload: true
+  action  [:enable, :restart]
+end
