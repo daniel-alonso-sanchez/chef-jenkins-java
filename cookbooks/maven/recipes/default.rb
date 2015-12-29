@@ -47,4 +47,11 @@ else
     source 'mavenrc.erb'
     mode   '0755'
   end
+  data = data_bag_item( 'config', 'config' )
+  template node['maven']['m2_home'] << '/conf' do
+    variables( :proxy_host => data['proxy.host'],:proxy_port => data['proxy.port'],:proxy_exclude => data['proxy.exclude'] )
+    source 'setings.xml.erb'
+    mode   '0755'
+  end
 end
+
