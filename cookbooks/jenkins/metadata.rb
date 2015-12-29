@@ -11,3 +11,10 @@ recipe 'master', 'Installs a Jenkins master'
 depends 'apt',   '~> 2.0'
 depends 'runit', '~> 1.5'
 depends 'yum',   '~> 3.0'
+depends 'java', '~> 1.36.0'
+depends 'maven', '~> 1.0.2'
+depends 'magic_shell'
+
+
+
+
