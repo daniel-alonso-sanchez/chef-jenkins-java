@@ -17,7 +17,7 @@
 	"dependencies" : {
 		"ark" : "~> 0.9",
 		"java" : "~> 1.20",
-		"windows" : ">= 0.0.0"
+		"windows" : ">= 0.0.0",
 		"magic_shell" : ">= 1.0.0"		
 	},
 	"recommendations" : {},
