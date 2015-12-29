@@ -21,7 +21,9 @@
 
 # install gems required for updating settings
 data = data_bag_item( 'maven', 'config' )
-  Chef::Log.info(data)
+log ${data} do
+  level :info
+end
   template "/usr/local/maven/conf/settings.xml" do
     variables( :proxy_host => data['proxy_host'],:proxy_port => data['proxy_port'],:proxy_exclude => data['proxy_exclude'] )
     source 'settings.xml.erb'
