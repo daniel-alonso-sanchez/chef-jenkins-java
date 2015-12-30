@@ -51,7 +51,7 @@ else
 	value node['maven']['m2_home']
   end
   if node['platform_family'] == 'debian'
-    line = 'M2_HOME=#{node['maven']['m2_home']}'
+    line = "M2_HOME=#{node['maven']['m2_home']}"
     file = Chef::Util::FileEdit.new('/etc/environment')
     file.insert_line_if_no_match(/#{line}/, line)
     file.write_file
