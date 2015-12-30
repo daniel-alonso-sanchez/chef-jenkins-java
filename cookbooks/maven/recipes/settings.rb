@@ -25,7 +25,7 @@
   proxies.each do |proxy|  
       daproxy = data_bag_item("proxies", proxy)
 	  excludedOnes=daproxy['proxy_exclude'].tr(",", "|")
-	  template "${ENV['M2_HOME']}/conf/settings.xml" do
+	  template "#{ENV['M2_HOME']}/conf/settings.xml" do
 		variables( :proxy_host => daproxy['proxy_host'],:proxy_port => daproxy['proxy_port'],:proxy_exclude => excludedOnes )
 		source 'settings.xml.erb'
 		mode   '0755'
