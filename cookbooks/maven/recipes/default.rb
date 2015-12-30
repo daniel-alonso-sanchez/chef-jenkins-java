@@ -46,17 +46,7 @@ else
   template '/etc/mavenrc' do
     source 'mavenrc.erb'
     mode   '0755'
-  end  
-  proxies = data_bag( 'proxies', )
-  proxies.each do |proxy|  
-      daproxy = data_bag_item("proxies", proxy)
-	  excludedOnes=daproxy['proxy_exclude'].tr(",", "|")
-	  template "/usr/local/maven/conf/settings.xml" do
-		variables( :proxy_host => daproxy['proxy_host'],:proxy_port => daproxy['proxy_port'],:proxy_exclude => excludedOnes )
-		source 'settings.xml.erb'
-		mode   '0755'
-	  end
-  end
+  end   
   magic_shell_environment 'M2_HOME' do
 	value node['maven']['m2_home']
   end
