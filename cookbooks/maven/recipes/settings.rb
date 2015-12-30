@@ -25,7 +25,7 @@
   proxies.each do |proxy|  
       daproxy = data_bag_item("proxies", proxy)
 	  excludedOnes=daproxy['proxy_exclude'].tr(",", "|")
-	  realPath="#{ENV['M2_HOME']}/conf/settings.xml"
+	  realPath="#{node['maven']['m2_home']}/conf/settings.xml"
 	  template realPath do
 		variables( :proxy_host => daproxy['proxy_host'],:proxy_port => daproxy['proxy_port'],:proxy_exclude => excludedOnes )
 		source 'settings.xml.erb'
