@@ -4,11 +4,16 @@ template "#{node['jenkins']['master']['home']}/config.xml" do
     owner 'jenkins'
     group 'jenkins'	
 end
+directory "#{node['jenkins']['master']['home']}/users" do
+  owner 'jenkins'
+  group 'jenkins'
+  mode '0755' 
+  action :create
+end
 directory "#{node['jenkins']['master']['home']}/users/admin" do
   owner 'jenkins'
   group 'jenkins'
-  mode '0751'
-  recursive true
+  mode '0755' 
   action :create
 end
 template "#{node['jenkins']['master']['home']}/users/admin/config.xml" do
