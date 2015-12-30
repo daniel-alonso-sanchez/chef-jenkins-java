@@ -44,6 +44,9 @@ end
 jenkins_plugin 'sonar' do
   source 'http://updates.jenkins-ci.org/latest/sonar.hpi'
 end
+jenkins_plugin 'role-strategy' do
+  source 'http://updates.jenkins-ci.org/latest/role-strategy.hpi'
+end
 service 'jenkins' do
   supports status: true, restart: true, reload: true
   action  [:enable, :restart]
