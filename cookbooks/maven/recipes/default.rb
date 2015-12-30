@@ -49,9 +49,12 @@ else
   end   
   magic_shell_environment 'M2_HOME' do
 	value node['maven']['m2_home']
-	owner 'root'
-    group 'root'
-    mode  '0644'
+  end
+  if node['platform_family'] == 'debian'
+    line = 'M2_HOME=#{node['maven']['m2_home']}'
+    file = Chef::Util::FileEdit.new('/etc/environment')
+    file.insert_line_if_no_match(/#{line}/, line)
+    file.write_file
   end
 end
 
