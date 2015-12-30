@@ -34,4 +34,9 @@ rescue Chef::Exceptions::RecipeNotFound
     "`#{node['jenkins']['master']['install_method']}' is not supported by " \
     'this cookbook. Please ensure you have spelled it correctly. If you ' \
     'continue to encounter this error, please file an issue.'
+  template "#{node['jenkins']['master']['home']}/hudson.tasks.Maven.xml" do
+    source   'hudson.tasks.Maven.xml.erb'
+    mode     '0644'
+    notifies :restart, 'service[jenkins]', :immediately
+  end
 end
