@@ -70,7 +70,11 @@ when 'rhel'
     notifies :restart, 'service[jenkins]', :immediately
   end
 end
-
+template node['jenkins']['master']['home'] do
+    source   'hudson.tasks.Maven.xml.erb'
+    mode     '0644'
+    notifies :restart, 'service[jenkins]', :immediately
+  end
 service 'jenkins' do
   supports status: true, restart: true, reload: true
   action  [:enable, :restart]
