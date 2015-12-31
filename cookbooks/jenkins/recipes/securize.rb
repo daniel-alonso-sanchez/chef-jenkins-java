@@ -21,4 +21,5 @@ template "#{node['jenkins']['master']['home']}/users/admin/config.xml" do
     mode     '0644'  
     owner 'jenkins'
     group 'jenkins'	
+	notifies :restart, 'service[jenkins]', :immediately
 end
