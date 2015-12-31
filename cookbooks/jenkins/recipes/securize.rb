@@ -1,3 +1,4 @@
+include_recipe "jenkins::_master_#{node['jenkins']['master']['install_method']}"
 template "#{node['jenkins']['master']['home']}/config.xml" do
     source   'jenkins-config.xml.erb'
     mode     '0644'  
