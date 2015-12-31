@@ -72,9 +72,12 @@ when 'rhel'
 end
 template "#{node['jenkins']['master']['home']}/hudson.tasks.Maven.xml" do
     source   'hudson.tasks.Maven.xml.erb'
-    mode     '0644'
-    notifies :restart, 'service[jenkins]', :immediately
-  end
+    mode     '0644'    
+end
+template "#{node['jenkins']['master']['home']}/maven-global-settings-files.xml" do
+    source   'maven-global-settings-files.xml.erb'
+    mode     '0644'    
+end
 service 'jenkins' do
   supports status: true, restart: true, reload: true
   action  [:enable, :restart]
