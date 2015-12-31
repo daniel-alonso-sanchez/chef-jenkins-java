@@ -13,6 +13,7 @@ depends 'runit', '~> 1.5'
 depends 'yum',   '~> 3.0'
 depends 'java', '~> 1.36.0'
 depends 'maven', '~> 2.1.0'
+depends 'git','~> 4.30'
 
 
 
