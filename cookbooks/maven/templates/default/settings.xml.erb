@@ -43,7 +43,7 @@
       <id>nexus</id>
       <mirrorOf>*</mirrorOf>
 <!--      <url>http://nexus.yourdomain.nl/content/groups/public</url> -->
-     <url>http://#{node['maven']['settings']['artifact_host']}:#{node['maven']['settings']['artifact_port']}#{node['maven']['settings']['artifact_path']}</url>
+     <url><%= "http://#{node['maven']['settings']['artifact_host']}:#{node['maven']['settings']['artifact_port']}#{node['maven']['settings']['artifact_path']}"%></url>
     </mirror>
   </mirrors>
   <profiles>
