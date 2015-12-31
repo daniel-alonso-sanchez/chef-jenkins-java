@@ -16,6 +16,83 @@
        <nonProxyHosts><%=@proxy_exclude%></nonProxyHosts>
  
    </proxy>
+   
   </proxies>
+  <servers>
+<!-- This is the username password used to access my nexus repository -->
+    <server>
+       <id>releases</id>
+       <username>admin</username>
+       <password>admin123</password> <!-- impossible password here :-) -->
+     </server>
+    <server>
+       <id>snapshots</id>
+       <username>admin</username>
+       <password>admin123</password> <!-- impossible password here :-) -->
+     </server>
+    <server>
+       <id>nexus</id>
+       <username>admin</username>
+       <password>admin123</password> <!-- impossible password here :-) -->
+     </server>
+  </servers>
 
+  <mirrors>
+    <mirror>
+      <!--This sends everything else to /public -->
+      <id>nexus</id>
+      <mirrorOf>*</mirrorOf>
+<!--      <url>http://nexus.yourdomain.nl/content/groups/public</url> -->
+     <url>http://#{node['maven']['settings']['artifact_host']}:#{node['maven']['settings']['artifact_port']}#{node['maven']['settings']['artifact_path']}</url>
+    </mirror>
+  </mirrors>
+  <profiles>
+    <profile>
+      <id>nexus</id>
+      <!--Enable snapshots for the built in central repo to direct -->
+      <!--all requests to nexus via the mirror -->
+      <repositories>
+        <repository>
+          <id>central</id>
+          <url>http://central</url>
+          <releases><enabled>true</enabled></releases>
+          <snapshots><enabled>true</enabled></snapshots>
+        </repository>
+      </repositories>
+     <pluginRepositories>
+        <pluginRepository>
+          <id>central</id>
+          <url>http://central</url>
+          <releases><enabled>true</enabled></releases>
+          <snapshots><enabled>true</enabled></snapshots>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
+    <!-- if you want to be able to switch to the defaultprofile profile put this in the active profile -->
+    <profile>
+        <id>defaultprofile</id>
+        <repositories>
+            <repository>
+                <id>maven.default</id>
+                <name>default maven repository</name>
+                <url>http://repo1.maven.org/maven2</url>
+                <snapshots>
+                    <enabled>true</enabled>
+                </snapshots>
+            </repository>
+            <repository>
+                <id>maven.snapshot</id>
+                <name>Maven snapshot repository</name>
+                <url>http://people.apache.org/repo/m2-snapshot-repository</url>
+                <snapshots>
+                    <enabled>true</enabled>
+                </snapshots>
+            </repository>
+        </repositories> 
+    </profile>
+  </profiles>
+  <activeProfiles>
+    <!--make the profile active all the time -->
+    <activeProfile>nexus</activeProfile>
+  </activeProfiles>
 </settings>
