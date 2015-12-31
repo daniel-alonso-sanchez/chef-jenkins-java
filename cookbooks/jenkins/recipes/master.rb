@@ -28,7 +28,7 @@
 
 # Gracefully handle the failure for an invalid installation type
 begin
-  include_recipe 'git::package'
+  include_recipe "git::package"
   include_recipe "jenkins::_master_#{node['jenkins']['master']['install_method']}"
   include_recipe "jenkins::install_plugins"
 rescue Chef::Exceptions::RecipeNotFound
